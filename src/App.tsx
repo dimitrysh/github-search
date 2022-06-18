@@ -1,9 +1,14 @@
 import React, { ComponentType } from 'react';
+import { ApolloProvider } from '@apollo/client';
 
-const App: ComponentType = () => {
-  return <div className='App'>
-    <h1>Hello World</h1>
-  </div>;
+import { client } from './api/client';
+
+export const App: ComponentType = () => {
+  return (
+    <ApolloProvider client={client}>
+      <div>
+        <h1>Search GitHub users</h1>
+      </div>
+    </ApolloProvider>
+  );
 };
-
-export default App;
